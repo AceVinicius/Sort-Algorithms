@@ -11,29 +11,34 @@ These instructions will get you a copy of the project up and running on your loc
 We just need a C compiler in our machine.
 
 ```
-Give examples
+$ sudo dnf install gcc
+$ sudo dnf update
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+After download all files and install dependencies, you can compile all files and generate an executable for each file. Make sure you are in "Sort-Algorithm" folder.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
 
 ```
-until finished
+$ gcc /Bubble\ Sort/bubble_sort.c -Ofast -Wextra -o bubble
+$ gcc /Selection\ Sort/selection_sort.c -Ofast -Wextra -o selection
+$ gcc /Insertion\ Sort/insertion_sort.c -Ofast -Wextra -o insertion 
+$ gcc /Merge\ Sort/merge_sort.c -Ofast -Wextra -o merge
+$ gcc /Quick\ Sort/quick_sort.c -Ofast -Wextra -o quick
+$ gcc /Shell\ Sort/shell_sort.c -Ofast -Wextra -o shell
+$ gcc /Heap\ Sort/heap_sort.c -Ofast -Wextra -o heap
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
+To compare the efficiency of each algorithm, we will run each executable with "time" before and an input file of 1.200.000 characters for sorting.
+
+```
+time ./[executable-name] < in.txt
+```
 Quick Sort     - recursive - 0m0.040s
 Merge Sort     - recursive - 0m0.060s
 Selection Sort - iterative - 5m38.448s
