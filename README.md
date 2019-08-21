@@ -22,13 +22,13 @@ After download all files and install dependencies, you can compile all files and
 
 
 ```
-$ gcc /Bubble\ Sort/bubble_sort.c -Ofast -Wextra -o bubble
-$ gcc /Selection\ Sort/selection_sort.c -Ofast -Wextra -o selection
-$ gcc /Insertion\ Sort/insertion_sort.c -Ofast -Wextra -o insertion 
-$ gcc /Merge\ Sort/merge_sort.c -Ofast -Wextra -o merge
-$ gcc /Quick\ Sort/quick_sort.c -Ofast -Wextra -o quick
-$ gcc /Shell\ Sort/shell_sort.c -Ofast -Wextra -o shell
-$ gcc /Heap\ Sort/heap_sort.c -Ofast -Wextra -o heap
+$ ccache gcc /Bubble\ Sort/bubble_sort.c -Ofast -Wextra -o bubble
+$ ccache gcc /Selection\ Sort/selection_sort.c -Ofast -Wextra -o selection
+$ ccache gcc /Insertion\ Sort/insertion_sort.c -Ofast -Wextra -o insertion 
+$ ccache gcc /Merge\ Sort/merge_sort.c -Ofast -Wextra -o merge
+$ ccache gcc /Quick\ Sort/quick_sort.c -Ofast -Wextra -o quick
+$ ccache gcc /Shell\ Sort/shell_sort.c -Ofast -Wextra -o shell
+$ ccache gcc /Heap\ Sort/heap_sort.c -Ofast -Wextra -o heap
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
