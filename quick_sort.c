@@ -7,8 +7,8 @@
 
 void
 quickSort(      char *user_v_,
-      const int   left_,
-      const int   right_)
+          const int   left_,
+          const int   right_)
 {
       if (left_ < right_)
       {
@@ -54,7 +54,7 @@ partition(      char *user_v_,
 
 void
 swap(char *value_1_,
-      char *value_2_)
+     char *value_2_)
 {
       const char tmp = *value_1_;
       *value_1_ = *value_2_;
@@ -72,7 +72,7 @@ main(void)
 {
       scanf(" %s", vector);
       quickSort(vector, 0, strlen(vector)-1);
-      // printf("%s\n", vector);
+      // puts(vector);
 
       return 0;
 }
