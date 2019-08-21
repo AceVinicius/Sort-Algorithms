@@ -74,7 +74,7 @@ main(void)
 {
       scanf(" %s", vector);
       mergeSort(vector, 0, strlen(vector)-1);
-      // printf("%s\n", vector);
+      // puts(vector);
 
       return 0;
 }
