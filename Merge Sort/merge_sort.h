@@ -5,8 +5,8 @@
 
 void
 mergeSort(      char *user_v_,
-      const int   begin_,
-      const int   end_);
+          const int   begin_,
+          const int   end_);
 
 
 
