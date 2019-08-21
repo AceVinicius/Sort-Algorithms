@@ -4,14 +4,15 @@ I made this project for study the most common sorting algorithms we use in gener
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+We will see 7 sorting algorithms. Bubble, selection, insertion, merge, quick, shell and heap sort. Merge and quick sort are recursive and the others iterative.
 
 ### Prerequisites
 
-We just need a C compiler in our machine.
+We just need a C compiler and ccache in our machine.
 
 ```
 $ sudo dnf install gcc
+$ sudo dnf install ccache
 $ sudo dnf update
 ```
 
