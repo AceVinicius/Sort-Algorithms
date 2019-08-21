@@ -1,2 +1,2 @@
-# sertalgorithms
+# sortalgorithms
 Sort Algorithms
