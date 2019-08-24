@@ -38,7 +38,7 @@ End with an example of getting some data out of the system or using it for a lit
 To compare the efficiency of each algorithm, we will run each executable with "time" before and an input file of 1.200.000 characters for sorting.
 
 ```
-time ./[executable-name] < in.txt
+$ time ./[executable-name] < in.txt
 ```
 
 I made an script file for fedora distributions, making all his procedure for an easy comparison. Please, be patient with Selection, Insertion and Bubble Sort. To run the script just type:
