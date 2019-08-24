@@ -4,11 +4,11 @@ I made this project for study the most common sorting algorithms we use in gener
 
 ## Getting Started
 
-We will see 7 sorting algorithms. Bubble, selection, insertion, merge, quick, shell and heap sort. Merge and quick sort are recursive and the others iterative.
+We will see 7 sorting algorithms. Bubble, selection, insertion, merge, quick, shell and heapsort.
 
 ### Prerequisites
 
-We just need a C compiler and ccache in our machine.
+To run our research, we just need a C compiler and ccache in our machine.
 
 ```
 $ sudo dnf install gcc
@@ -18,17 +18,17 @@ $ sudo dnf update
 
 ### Installing
 
-After download all files and install dependencies, you can compile all files and generate an executable for each file. Make sure you are in "Sort-Algorithm" folder.
+After download all files and install dependencies, you can compile all files and generate an executable for each file. Make sure you are in "Sort-Algorithms" folder.
 
 
 ```
-$ ccache gcc /Bubble\ Sort/bubble_sort.c -Ofast -Wextra -o bubble
-$ ccache gcc /Selection\ Sort/selection_sort.c -Ofast -Wextra -o selection
-$ ccache gcc /Insertion\ Sort/insertion_sort.c -Ofast -Wextra -o insertion 
-$ ccache gcc /Merge\ Sort/merge_sort.c -Ofast -Wextra -o merge
-$ ccache gcc /Quick\ Sort/quick_sort.c -Ofast -Wextra -o quick
-$ ccache gcc /Shell\ Sort/shell_sort.c -Ofast -Wextra -o shell
-$ ccache gcc /Heap\ Sort/heap_sort.c -Ofast -Wextra -o heap
+$ ccache gcc Bubble\ Sort/bubble_sort.c -Ofast -Wextra -o Run/bubble
+$ ccache gcc Selection\ Sort/selection_sort.c -Ofast -Wextra -o Run/selection
+$ ccache gcc Insertion\ Sort/insertion_sort.c -Ofast -Wextra -o Run/insertion 
+$ ccache gcc Merge\ Sort/merge_sort.c -Ofast -Wextra -o Run/merge
+$ ccache gcc Quick\ Sort/quick_sort.c -Ofast -Wextra -o Run/quick
+$ ccache gcc Shell\ Sort/shell_sort.c -Ofast -Wextra -o Run/shell
+$ ccache gcc Heap\ Sort/heap_sort.c -Ofast -Wextra -o Run/heap
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -40,28 +40,25 @@ To compare the efficiency of each algorithm, we will run each executable with "t
 ```
 time ./[executable-name] < in.txt
 ```
+
+I made an script file for fedora distributions, making all his procedure for an easy comparison. Please, be patient with Selection, Insertion and Bubble Sort. To run the script just type:
+
+```
+$ cd [path]/Sort-Algorithms
+$ sudo bash install_dependencies.sh
+```
+
 Quick Sort     - recursive - 0m0.040s
 Merge Sort     - recursive - 0m0.060s
 Selection Sort - iterative - 5m38.448s
 Insertion Sort - iterative - 2m2.156s
-Shell Sort     - iterative - s
-Heap Sort      - iterative - s
+Bubble Sort    - recursive - m.s
+Shell Sort     - iterative - 0m0.s
+Heap Sort      - iterative - 0m0.s
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+Chosing the right sorting algorithm for your project is essential. Each one has it's own advantages. To learn more about them, each file is commented for learning purposes.
 
 ## Authors
 
