@@ -10,7 +10,8 @@
  *
  *   Merge Sort is a recursive algorithm that sorts an array
  *   spliting them into unitary elements, and then merging them
- *   in ascendent/descendent order.
+ *   in greater arrays, repeating this process until we get a
+ *   single array again, but this time sorted.
  *
  */
 
@@ -59,7 +60,14 @@ mergeSort(      char *array_,
              *  Now, we can start to merge these unitary arrays
              *  into a vector again, but putting the smaller/greater
              *  in the right place using the merge algorithm. More
-             *  on that later.
+             *  on that later. Note that we send two intervals.
+             *  This function is not responsible for only sticking
+             *  togheter the unitary elements but the product of\
+             *  them too. For example, the input for sticking two
+             *  unitary elements would be (array, 0, 0, 1, 1). And
+             *  an input for two bigger array will be (array, 1, 4, 6, 9)
+             *  telling us to merge the interval [ 1-4 ] with the 
+             *  interval [ 6-9 ].
              */  
             merge(array_, begin_, middle, middle + 1, end_);
       }
@@ -70,42 +78,68 @@ mergeSort(      char *array_,
 
 
 void
-merge(      char *user_v_,
+merge(      char *array_,
       const int   l_begin_,
       const int   l_end_,
       const int   r_begin_,
             int   r_end_)
 {
-      char aux_v[ r_end_ ];
+      /*
+       *  This is our auxiliar array. It will be filled up
+       *  with the elements of the intervals received in
+       *  ascending/descending order.
+       */
+      char aux[ r_end_ ];
 
-      int li = l_begin_;
-      int ri = r_begin_;
-      int ai = 0;
+      int li = l_begin_; /* left interval iterator */
+      int ri = r_begin_; /* right interval iterator */
+      int ai = 0; /* auxiliar array iterator */
 
+      /*
+       *  This loop runs until one of our two intervals end.
+       */
       while (li <= l_end_ && ri <= r_end_)
       {
-            if (user_v_[ li ] <= user_v_[ ri ])
+            /*
+             *  This selection verifies the two elements
+             *  of our intervals, placing the smallest/biggest
+             *  in the auxiliar array.
+             *  Swapping the "<=" symbol for ">=" will revert
+             *  the sorting order to descending.
+             */
+            if (array_[ li ] <= array_[ ri ])
             {
-                  aux_v[ ai++ ] = user_v_[ li++ ];
+                  aux[ ai++ ] = array_[ li++ ];
             }
             else
             {
-                  aux_v[ ai++ ] = user_v_[ ri++ ];
+                  aux[ ai++ ] = array_[ ri++ ];
             }
       }
 
+      /*
+       *  After one of the intervals finish, the only thing
+       *  to do is copy the rest of the other to the end of
+       *  the auxiliar array. We can do this with this loops.
+       *  Note that the while condition is similar to the
+       *  last one, so just one while below will run.
+       */
       while (li <= l_end_)
       {
-            aux_v[ ai++ ] = user_v_[ li++ ];
+            aux[ ai++ ] = array_[ li++ ];
       }
       while (ri <= r_end_)
       {
-            aux_v[ ai++ ] = user_v_[ ri++ ];
+            aux[ ai++ ] = array_[ ri++ ];
       }
-
+      
+      /*
+       *  To finish the merge, just copy the auxiliar
+       *  array to the right interval in the original. 
+       */
       while (r_end_ >= l_begin_)
       {
-            user_v_[ r_end_-- ] = aux_v[ --ai ];
+            array_[ r_end_-- ] = aux[ --ai ];
       }
 
       return;
