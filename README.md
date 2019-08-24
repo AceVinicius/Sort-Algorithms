@@ -48,6 +48,12 @@ $ cd [path]/Sort-Algorithms
 $ sudo bash install_dependencies.sh
 ```
 
+To rerun the tests later:
+
+```
+$ sudo bash run.sh
+```
+
 Quick Sort     - recursive - 0m0.040s
 Merge Sort     - recursive - 0m0.060s
 Selection Sort - iterative - 5m38.448s
