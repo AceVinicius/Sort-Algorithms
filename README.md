@@ -11,7 +11,7 @@ We will see 7 sorting algorithms. Bubble, selection, insertion, merge, quick, sh
 To run our research, we just need a C compiler and ccache in our machine.
 
 ```
-$ sudo dnf install gcc
+$ sudo dnf install clang
 $ sudo dnf install ccache
 $ sudo dnf update
 ```
@@ -22,13 +22,13 @@ After download all files and install dependencies, you can compile all files and
 
 
 ```
-$ ccache gcc Bubble\ Sort/bubble_sort.c -Ofast -Wextra -o Run/bubble
-$ ccache gcc Selection\ Sort/selection_sort.c -Ofast -Wextra -o Run/selection
-$ ccache gcc Insertion\ Sort/insertion_sort.c -Ofast -Wextra -o Run/insertion 
-$ ccache gcc Merge\ Sort/merge_sort.c -Ofast -Wextra -o Run/merge
-$ ccache gcc Quick\ Sort/quick_sort.c -Ofast -Wextra -o Run/quick
-$ ccache gcc Shell\ Sort/shell_sort.c -Ofast -Wextra -o Run/shell
-$ ccache gcc Heap\ Sort/heap_sort.c -Ofast -Wextra -o Run/heap
+$ ccache clang ./Bubble\ Sort/bubble_sort.c       -O3 -W -Wall -o ./bin/bubble
+$ ccache clang ./Selection\ Sort/selection_sort.c -O3 -W -Wall -o ./bin/selection
+$ ccache clang ./Insertion\ Sort/insertion_sort.c -O3 -W -Wall -o ./bin/insertion 
+$ ccache clang ./Merge\ Sort/merge_sort.c         -O3 -W -Wall -o ./bin/merge
+$ ccache clang ./Quick\ Sort/quick_sort.c         -O3 -W -Wall -o ./bin/quick
+$ ccache clang ./Shell\ Sort/shell_sort.c         -O3 -W -Wall -o ./bin/shell
+$ ccache clang ./Heap\ Sort/heap_sort.c           -O3 -W -Wall -o ./bin/heap
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -38,6 +38,7 @@ End with an example of getting some data out of the system or using it for a lit
 To compare the efficiency of each algorithm, we will run each executable with "time" before and an input file of 1.200.000 characters for sorting.
 
 ```
+cd bin
 $ time ./[executable-name] < in.txt
 ```
 
