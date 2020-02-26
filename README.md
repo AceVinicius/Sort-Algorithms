@@ -55,13 +55,13 @@ To rerun the tests later:
 $ sudo bash run.sh
 ```
 
-Quick Sort     - recursive - 0m0.040s
-Merge Sort     - recursive - 0m0.060s
-Selection Sort - iterative - 5m38.448s
-Insertion Sort - iterative - 2m2.156s
-Bubble Sort    - recursive - m.s
-Shell Sort     - iterative - 0m0.s
-Heap Sort      - iterative - 0m0.s
+Quick Sort     - recursive - 0m0.040s\n
+Merge Sort     - recursive - 0m0.060s\n
+Selection Sort - iterative - 5m38.448s\n
+Insertion Sort - iterative - 2m2.156s\n
+Bubble Sort    - recursive - m.s\n
+Shell Sort     - iterative - 0m0.s\n
+Heap Sort      - iterative - 0m0.s\n
 
 ### Break down into end to end tests
 
