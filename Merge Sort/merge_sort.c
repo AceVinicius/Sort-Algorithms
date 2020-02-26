@@ -23,9 +23,9 @@
 
 
 void
-mergeSort(      char *array_,
-          const int   begin_,
-          const int   end_)
+mergeSort(      char *array,
+          const int   begin,
+          const int   end)
 {
       /*
        *  This if selection is our stop point. When the
@@ -33,7 +33,7 @@ mergeSort(      char *array_,
        *  will be equal to begin_, stopping the recursive
        *  calls.
        */
-      if (end_ > begin_)
+      if (end > begin)
       {
             /*
              *  Getting the floor value of the middle position 
@@ -41,7 +41,7 @@ mergeSort(      char *array_,
              *  mergeSort again, but now,\ only with half of the 
              *  size.
              */
-            const int middle = (begin_ + end_) / 2;
+            const int middle = (begin + end) / 2;
                 
             /*
              *  Here we start the recursive calls. As you can see,
@@ -53,8 +53,8 @@ mergeSort(      char *array_,
              *  times, after sometime we will hit our goal of
              *  having each element in an unitary array.
              */
-            mergeSort(array_, begin_, middle);
-            mergeSort(array_, middle + 1, end_);
+            mergeSort( array, begin, middle );
+            mergeSort( array, middle + 1, end );
                 
             /*
              *  Now, we can start to merge these unitary arrays
@@ -69,7 +69,7 @@ mergeSort(      char *array_,
              *  telling us to merge the interval [ 1-4 ] with the 
              *  interval [ 6-9 ].
              */  
-            merge(array_, begin_, middle, middle + 1, end_);
+            merge( array, begin, middle, middle + 1, end );
       }
 
       return;
@@ -78,27 +78,27 @@ mergeSort(      char *array_,
 
 
 void
-merge(      char *array_,
-      const int   l_begin_,
-      const int   l_end_,
-      const int   r_begin_,
-            int   r_end_)
+merge(      char *array   ,
+      const int   l_begin ,
+      const int   l_end   ,
+      const int   r_begin ,
+            int   r_end   )
 {
       /*
        *  This is our auxiliar array. It will be filled up
        *  with the elements of the intervals received in
        *  ascending/descending order.
        */
-      char aux[ r_end_ ];
+      char aux[ r_end ];
 
-      int li = l_begin_; /* left interval iterator */
-      int ri = r_begin_; /* right interval iterator */
+      int li = l_begin; /* left interval iterator */
+      int ri = r_begin; /* right interval iterator */
       int ai = 0; /* auxiliar array iterator */
 
       /*
        *  This loop runs until one of our two intervals end.
        */
-      while (li <= l_end_ && ri <= r_end_)
+      while (li <= l_end && ri <= r_end)
       {
             /*
              *  This selection verifies the two elements
@@ -107,13 +107,13 @@ merge(      char *array_,
              *  Swapping the "<=" symbol for ">=" will revert
              *  the sorting order to descending.
              */
-            if (array_[ li ] <= array_[ ri ])
+            if (array[ li ] <= array[ ri ])
             {
-                  aux[ ai++ ] = array_[ li++ ];
+                  aux[ ai++ ] = array[ li++ ];
             }
             else
             {
-                  aux[ ai++ ] = array_[ ri++ ];
+                  aux[ ai++ ] = array[ ri++ ];
             }
       }
 
@@ -124,22 +124,22 @@ merge(      char *array_,
        *  Note that the while condition is similar to the
        *  last one, so just one while below will run.
        */
-      while (li <= l_end_)
+      while (li <= l_end)
       {
-            aux[ ai++ ] = array_[ li++ ];
+            aux[ ai++ ] = array[ li++ ];
       }
-      while (ri <= r_end_)
+      while (ri <= r_end)
       {
-            aux[ ai++ ] = array_[ ri++ ];
+            aux[ ai++ ] = array[ ri++ ];
       }
       
       /*
        *  To finish the merge, just copy the auxiliar
        *  array to the right interval in the original. 
        */
-      while (r_end_ >= l_begin_)
+      while (r_end >= l_begin)
       {
-            array_[ r_end_-- ] = aux[ --ai ];
+            array[ r_end-- ] = aux[ --ai ];
       }
 
       return;
@@ -147,14 +147,15 @@ merge(      char *array_,
 
 
 
-char vector[ 1200000 ];
-
 int
-main(void)
+main( void )
 {
-      scanf(" %s", vector);
-      mergeSort(vector, 0, strlen(vector)-1);
-      // puts(vector);
+      char vector[ 100 ];
+      scanf( " %s", vector );
+      
+      mergeSort( vector, 0, strlen(vector)-1 );
+      
+      puts( vector );
 
       return 0;
 }
